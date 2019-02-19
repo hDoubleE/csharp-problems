@@ -22,4 +22,28 @@ public class Solution {
         }
         return maxProfit;
     }
+    public int MaxSubArray(int[] nums)
+    {
+            int maxSum = nums[0];
+            int currentSum = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (currentSum + nums[i] > nums[i])
+                {
+                    currentSum += nums[i];
+                }
+
+                else
+                {
+                    currentSum = nums[i];
+                }
+
+                if (currentSum > maxSum)
+                {
+                    maxSum = currentSum;
+                }
+            }
+            return maxSum;
+        }
 }
