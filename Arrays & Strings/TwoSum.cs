@@ -2,6 +2,8 @@
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 // Map value to index. 
 
+// https://leetcode.com/problems/two-sum/
+
 
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {

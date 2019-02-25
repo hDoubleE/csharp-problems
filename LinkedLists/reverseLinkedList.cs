@@ -11,11 +11,14 @@ namespace DataStructures
             s.Print(n);
             ListNode reverse = s.RecerseList(n);
             s.Print(reverse);
-
-
         }
     }
+// Reverse a singly linked list.
 
+// Input: 1->2->3->4->5->NULL
+// Output: 5->4->3->2->1->NULL
+
+// https://leetcode.com/problems/reverse-linked-list/
 
     public class ListNode
     {
@@ -26,6 +29,7 @@ namespace DataStructures
 
     public class Solution
     {
+        // Iterative solution.
         public ListNode ReverseList(ListNode head)
         {
             ListNode current = head;
@@ -40,7 +44,8 @@ namespace DataStructures
             head = previous;
             return head;
         }
-
+        // Recursive solution.
+        // Can return void also with no 'p' variable.
         public ListNode RecerseList(ListNode head)
         {
             if (head == null || head.next == null) return head;

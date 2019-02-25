@@ -1,6 +1,6 @@
 // Given a string, find the first non-repeating character in it and return it's index. 
 // If it doesn't exist, return -1.
-// Works
+// https://leetcode.com/problems/first-unique-character-in-a-string/
 public class Solution {
     public int FirstUniqChar(string s) {
         Dictionary<char, int> ht = new Dictionary<char, int>();
@@ -16,6 +16,7 @@ public class Solution {
                 ht[s[i]] += 1;
             }
         }
+        
         for (int i = 0; i < s.Length; i++)
         {
             if (ht[s[i]] == 1)
@@ -26,6 +27,7 @@ public class Solution {
         return -1;
     }
 }
+
 // Using array, faster!
 public class Solution {
     public int FirstUniqChar(string s) {
@@ -34,6 +36,7 @@ public class Solution {
         {
             arr[s[i]]++;
         }
+
         for (int i = 0; i < s.Length; i++)
         {
             if (arr[s[i]] == 1)

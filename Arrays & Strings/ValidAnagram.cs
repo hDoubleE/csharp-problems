@@ -2,7 +2,9 @@
 // Input: s = "anagram", t = "nagaram"
 // Output: true
 
-// Hastable, works, but slower.
+// https://leetcode.com/problems/valid-anagram/
+
+// Hastable, works, but slower, better for unicode.
 public class Solution {
     public bool IsAnagram(string s, string t) {
         Dictionary<int, int> ht = new Dictionary<int, int>();
@@ -35,7 +37,7 @@ public class Solution {
     }
 }
 
-// Array, faster!
+// Array, faster! This input was ASCII, lowercase only.
 public class Solution {
     public bool IsAnagram(string s, string t) { 
         if (s.Length != t.Length) return false;

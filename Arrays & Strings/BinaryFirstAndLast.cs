@@ -111,6 +111,49 @@ public class Solution {
     {
         return index >= 0 && index <= arr.Length - 1;
     }
+    // Alternate version
+    public int[] SearchRange(int[] arr, int target) 
+    {
+        int[] results = {-1, -1};
+        
+        if(arr == null || arr.Length == 0)
+            return results;
+        
+        int start = 0;
+        int end = arr.Length - 1;
+        
+        // Search left.
+        while (start < end)
+        {
+            int mid = start + (end - start) / 2;
+            
+            if (arr[mid] < target)
+                start = mid + 1;
+            else 
+                end = mid;
+        }
+        
+        if (arr[start] == target)
+            results[0] = start;
+        
+        end = arr.Length - 1;
+        
+        // Search right.
+        while (start < end)
+        {
+            int mid = (start + (end - start) / 2) + 1;
+            if (arr[mid] > target)
+                end = mid - 1;
+            else 
+                start = mid;
+        }
+        
+        if (arr[start] == target)
+            results[1] = start;
+        
+        return results;
+       
+    }
 }
 
 // [5, 7, 7, 8, 8, 10]
