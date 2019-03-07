@@ -4,7 +4,7 @@ using Stytem;
 Given an array of integers nums sorted in ascending order,
 find the starting and ending position of a given target value.
 Your algorithm's runtime complexity must be in the order of O(log n).
-If the target is not found in the array, return [-1, -1].
+If the target is not found in the array, return [-1].
 
 Input: nums = [5,7,7,8,8,10], target = 8
 Output: [3,4]
@@ -61,7 +61,7 @@ public class Solution {
             // If target value found, branch into search first or search last.
             if (arr[mid] == target)
             {
-                //Search for first occurence of target value.
+                //Search for first occurrence of target value.
                 if (searchType == SearchType.FIRST)
                 {
                     // If still in bounds and previous equal current value.
@@ -76,7 +76,7 @@ public class Solution {
                     }
                 }
                 
-                // Search for last occurence of target value. 
+                // Search for last occurrence of target value. 
                 else if (searchType == SearchType.LAST)
                 {
                     // still in bounds and next value equals current value.
@@ -93,7 +93,7 @@ public class Solution {
 
             }
             
-            // Otherwise target value not yet found, continue regular binary search.
+            // Otherwise target value not yet found, continue binary search.
             else if (arr[mid] < target)
             {
                 start = mid + 1;

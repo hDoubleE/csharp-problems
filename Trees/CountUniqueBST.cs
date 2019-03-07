@@ -33,6 +33,5 @@ namespace Problem
             }
             return arr[n];
         }
-
     }
 }
